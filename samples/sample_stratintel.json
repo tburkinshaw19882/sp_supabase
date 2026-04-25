@@ -1,0 +1,73 @@
+{
+  "signal_id": "ac49760d-e2a5-442a-8bcf-95af0d1b124b",
+  "signal_date": "2026-04-24T00:00:00.000Z",
+  "signal_score": 7,
+  "signal_type": "Company",
+  "signal_source": [
+    "AENU"
+  ],
+  "signal_summary": "A Partner at AENU is in talks with Greenvi AI as it seeks seed capital. It provides AI-powered market intelligence for the renewable energy sector.",
+  "source_types": [
+    "venture_capital"
+  ],
+  "entity_id": "682e08ba1b864a6a9ccf72fe",
+  "signal_total_funding_usd": 646684,
+  "signal_last_funding_usd": 577077,
+  "signal_last_funding_date": "2026-04-02T00:00:00.000Z",
+  "signal_investors": [
+    {
+      "name": "European Innovation Council"
+    },
+    {
+      "name": "Seeds of Bravery"
+    }
+  ],
+  "company": {
+    "name": "Greenvi AI",
+    "description": "Greenvi AI provides up-to-date market intelligence to help renewable energy developers, EPCs, investors, and equipment providers identify and evaluate project and deal opportunities. The platform uses AI agents and continuous automated market analysis to surface active projects, trends, and regional data across Europe and the U.S. It is positioned as a B2B SaaS intelligence platform for renewable energy markets and deals. Greenvi AI ingests and analyzes market and project signals to speed strategic and commercial decision-making. The platform targets professional energy stakeholders seeking timely, actionable market insights.",
+    "website": "http://greenvi.ai/",
+    "linkedin_url": "https://www.linkedin.com/company/greenvi-ai",
+    "twitter_url": "https://x.com/aigreenvi60253",
+    "founded_year": 2024,
+    "hq": {
+      "city": "London",
+      "state": "England",
+      "country": "United Kingdom",
+      "region": "Europe"
+    },
+    "industries": [
+      "Energy",
+      "Information Technology",
+      "Software",
+      "Sustainability"
+    ],
+    "industry": [
+      "Utilities",
+      "Electric Power Generation"
+    ],
+    "tech_verticals": [
+      [
+        "ClimateTech",
+        "Climate Data, Analytics and Risk"
+      ],
+      [
+        "Energy & Storage",
+        "Energy Data, Metering and Analytics"
+      ],
+      [
+        "ClimateTech",
+        "Climate Finance and Carbon Markets"
+      ],
+      [
+        "Data & Analytics",
+        "Business Intelligence and Decision Intelligence"
+      ],
+      [
+        "Data & Analytics",
+        "Data Marketplaces and External Data APIs"
+      ]
+    ],
+    "is_industry_estimated": false,
+    "customer_focus": "b2b"
+  }
+}

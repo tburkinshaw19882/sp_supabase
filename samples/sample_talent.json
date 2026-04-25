@@ -1,0 +1,973 @@
+{
+  "person_id": "per_3472294b4086fdfa134c50df",
+  "talent_signal_ids": [
+    "633b150a-bcae-461a-b6bc-6038e233ec9c",
+    "2e38be10-f0bb-4d24-a1ce-49665a3847d4"
+  ],
+  "investor_signal_ids": null,
+  "profile_picture_url": "https://peopledb-public.s3.eu-west-2.amazonaws.com/assets/profile-pictures/per_3472294b4086fdfa134c50df.jpg",
+  "first_name": "Christian",
+  "last_name": "Lindener",
+  "full_name": "Christian Lindener",
+  "linkedin_url": "https://www.linkedin.com/in/christian-lindener",
+  "twitter_url": null,
+  "github_url": null,
+  "about": "Christian is a serial entrepreneur who has co-founded several successful startups, including Reflex Aerospace \u2014 the first venture-backed satellite manufacturer in Europe, a virtual reality startup that was acquired by booking.com, and Skyroads \u2014 an open digital operations platform for the urban air mobility market. He was also CEO of UN:IO Enterprise GmbH, Europe's first low latency and high bandwidth satellite mega constellation. \n\nBefore joining Mach49, Christian served as Head of Airbus Scale \u2014 Airbus\u2019 central innovation unit \u2014 where he drove all of the company\u2019s internal and external innovation activities. He also served as Managing Director of Wayra Germany \u2014 Telef\u00f3nica\u2019s CVC arm \u2014 where he oversaw the strategic direction of the organization and managed the selection of and investment in startups to be integrated into Telef\u00f3nica\u2019s portfolio.\n\nChristian is also very active in venture capital especially when it comes to impact as Co-Founder of the Climate DeepTech Fund and Catalyst, Marvelous. \n\nChristian has created and advised over 20 incubator and accelerator programs across Germany, Switzerland, and Austria and holds board seats at several high-tech, high-growth startups across Europe. As Co-Founder and Director of TechFounders \u2014 a high-tech hardware accelerator based in Munich \u2014 he was responsible for the development of over 50 high-tech startups.\n\nBorn in Brazil and raised in Mexico, Christian holds degrees in international business administration and economics from the Leopold-Franzens University in Innsbruck, the University of New Orleans, and the University of Barcelona. He now lives in Barcelona with his wife and two children, and enjoys surfing the European swells in his free time.",
+  "tagline": "Shipping Deep Tech Ventures",
+  "location": "Barcelona, Catalonia, Spain, Europe",
+  "region": "Europe",
+  "highlights": [
+    "hyper_connector",
+    "influencer",
+    "prior_exit",
+    "prior_ipo",
+    "prior_vc_backed_founder",
+    "serial_founder",
+    "strong_technical_background"
+  ],
+  "level_of_seniority": "Executive Level",
+  "years_of_experience": 22,
+  "education_level": "Master's Degree",
+  "experience": [
+    {
+      "company_name": "Creative Dock Group",
+      "company_id": "5e3b950a137e998b5aeb8c63",
+      "domain": "creativedock.com",
+      "linkedin_url": "linkedin.com/company/creative-dock",
+      "description": "Building and investing in Deep Tech ventures from science and engineering.\n\nFocused on turning science, engineering and IP into scalable companies \u2014 from first concept to launched and growing businesses.\n\nHands-on across:\n\t\u2022\tVenture building (0\u21921 and scale)\n\t\u2022\tVenture investment (first cheque and beyond)\n\t\u2022\tProduct, engineering and go-to-market execution\n\nFocus areas:\n\t\u2022\tClimate & Energy\n\t\u2022\tRobotics & Automation\n\t\u2022\tAI & Industrial Systems\n\t\u2022\tAdvanced Materials\n\t\u2022\tDual-Use / Defense Tech\n\nLess pilots. More companies that ship.",
+      "company_size": "201-500",
+      "industries": [
+        "Commerce and Shopping",
+        "Energy",
+        "Information Technology",
+        "Lending and Investments",
+        "Software"
+      ],
+      "industry": [
+        "Technology, Information and Internet",
+        "Software Development"
+      ],
+      "tech_verticals": [],
+      "title": "Managing Director Deep Tech",
+      "departments": [
+        "Senior Leadership",
+        "Engineering"
+      ],
+      "start_date": "2026-04-01",
+      "end_date": null,
+      "location": "Z\u00fcrich, Zurich, Switzerland, Europe",
+      "is_current": true,
+      "founded_year": 2012,
+      "job_order": 21
+    },
+    {
+      "company_name": "Mach49",
+      "company_id": "5e3bbf6600c8f4c966a1cb33",
+      "domain": "mach49.com",
+      "linkedin_url": "linkedin.com/company/mach49",
+      "description": null,
+      "company_size": "11-50",
+      "industries": [
+        "Finance",
+        "Lending and Investments",
+        "Professional Services"
+      ],
+      "industry": [
+        "Professional Services",
+        "Business Consulting and Services"
+      ],
+      "tech_verticals": [],
+      "title": "Managing Partner",
+      "departments": [
+        "Senior Leadership"
+      ],
+      "start_date": "2023-02-01",
+      "end_date": "2026-02-01",
+      "location": "Redwood City, California, United States, North America",
+      "is_current": false,
+      "founded_year": 2013,
+      "job_order": 20
+    },
+    {
+      "company_name": "Mach49",
+      "company_id": "5e3bbf6600c8f4c966a1cb33",
+      "domain": "mach49.com",
+      "linkedin_url": "linkedin.com/company/mach49",
+      "description": "Mach49 helps Global 1000 companies develop a pipeline and portfolio of successful new ventures by Disrupting InsideOut\u2122 \u2014 creating, building and launching new ventures generated from within their organizations \u2014 and Disrupting OutsideIn\u2122 \u2014 designing and managing world-class corporate venture groups.",
+      "company_size": "11-50",
+      "industries": [
+        "Finance",
+        "Lending and Investments",
+        "Professional Services"
+      ],
+      "industry": [
+        "Professional Services",
+        "Business Consulting and Services"
+      ],
+      "tech_verticals": [],
+      "title": "Board Member in Residence",
+      "departments": [
+        "Senior Leadership"
+      ],
+      "start_date": "2022-04-01",
+      "end_date": "2026-02-01",
+      "location": "Redwood City, California, United States, North America",
+      "is_current": false,
+      "founded_year": 2013,
+      "job_order": 19
+    },
+    {
+      "company_name": "Mach49",
+      "company_id": "5e3bbf6600c8f4c966a1cb33",
+      "domain": "mach49.com",
+      "linkedin_url": "linkedin.com/company/mach49",
+      "description": "Mach49 pioneered and leads the venture-driven growth category. We were founded on the belief that only global businesses have the scale, reach, and resources to solve the world\u2019s most pressing problems. We help ambitious global companies tackle these challenges through Venture Building and Venture Investing. How? Focused 100% on execution, we bring Silicon Valley expertise to building and investing in a portfolio of ventures \u2014 building capability, not dependency.",
+      "company_size": "11-50",
+      "industries": [
+        "Finance",
+        "Lending and Investments",
+        "Professional Services"
+      ],
+      "industry": [
+        "Professional Services",
+        "Business Consulting and Services"
+      ],
+      "tech_verticals": [],
+      "title": "Co-Managing Partner EMEA",
+      "departments": [
+        "Senior Leadership"
+      ],
+      "start_date": "2023-01-01",
+      "end_date": "2024-02-01",
+      "location": "Redwood City, California, United States, North America",
+      "is_current": false,
+      "founded_year": 2013,
+      "job_order": 18
+    },
+    {
+      "company_name": "Conntac - The self-service company",
+      "company_id": "5e3a7f170aa7a3270a54dee0",
+      "domain": "conntac.net",
+      "linkedin_url": "linkedin.com/company/conntac",
+      "description": "Conntacs vision is to empower people to master complex processes themselves. Even a space shuttle can be repaired by a layman given easily understandable instructions. Be it in space, at home, in the office or on the go \u2013 with our solutions, everybody, in every situation, will receive the right instructions for a given task at hand \u2013 automized, interactive, intuitive and individualized. The ultimate goal is to make everybody\u2019s modern life less complex.",
+      "company_size": "11-50",
+      "industries": [
+        "Administrative Services",
+        "Data and Analytics",
+        "Information Technology",
+        "Professional Services",
+        "Software"
+      ],
+      "industry": [
+        "Technology, Information and Internet",
+        "Software Development"
+      ],
+      "tech_verticals": [
+        [
+          "Future of Work",
+          "Collaboration and Communication"
+        ],
+        [
+          "SalesTech",
+          "Customer Support & Experience"
+        ],
+        [
+          "Enterprise Automation",
+          "Low-Code/No-Code Business Automation"
+        ]
+      ],
+      "title": "Chairman of the Board",
+      "departments": [
+        "Senior Leadership"
+      ],
+      "start_date": "2022-03-01",
+      "end_date": "2026-02-01",
+      "location": "Augsburg, Bavaria, Germany, Europe",
+      "is_current": false,
+      "founded_year": 2017,
+      "job_order": 17
+    },
+    {
+      "company_name": "A2A",
+      "company_id": "650d746f538115f141caa8bc",
+      "domain": "gruppoa2a.it",
+      "linkedin_url": "linkedin.com/company/a2a",
+      "description": "Board Member in Residence at the A2A startup PeaX. We are on a mission to create a world where all cities, of all sizes, are heated with district heating.",
+      "company_size": "1001-5000",
+      "industries": [
+        "Energy",
+        "Sustainability"
+      ],
+      "industry": [
+        "Utilities"
+      ],
+      "tech_verticals": [
+        [
+          "Energy & Storage",
+          "Clean Power Generation"
+        ],
+        [
+          "ClimateTech",
+          "Climate Adaptation and Resilience"
+        ],
+        [
+          "ClimateTech",
+          "Water and Ocean Systems"
+        ],
+        [
+          "ClimateTech",
+          "Carbon Management"
+        ],
+        [
+          "Energy & Storage",
+          "Off-grid and Microgrids"
+        ]
+      ],
+      "title": "Board Member in Residence",
+      "departments": [
+        "Senior Leadership"
+      ],
+      "start_date": "2024-07-01",
+      "end_date": "2025-06-01",
+      "location": "Milan, Lombardy, Italy, Europe",
+      "is_current": false,
+      "founded_year": 2008,
+      "job_order": 16
+    },
+    {
+      "company_name": "NEOM",
+      "company_id": "5e3bbd7000c8f4c9669c3cc5",
+      "domain": "neom.com",
+      "linkedin_url": "linkedin.com/company/discoverneom",
+      "description": "Portfolio T is the Venture Studio for a global technology and digital company currently operating in stealth mode. But we\u2019re unlike any venture studio you\u2019ve experienced before.\n\nWe work on disruptive, sustainable solutions that touch every aspect of life \u2014 energy and water, education, health, food, nature, renewable energy, tourism, media, financial services, mobility, and more.\n\nWe\u2019re also helping to create the world\u2019s first ecosystem of cognitive technologies, including unrivaled connectivity, computing capability, AI, and robotics that will enhance lives and protect our planet.",
+      "company_size": "5001-10000",
+      "industries": [
+        "Government and Military",
+        "Mobile, Platforms, and Apps",
+        "Software"
+      ],
+      "industry": [
+        "Government Administration",
+        "Housing and Community Development",
+        "Community Development and Urban Planning"
+      ],
+      "tech_verticals": [],
+      "title": "Board Member in Residence",
+      "departments": [
+        "Senior Leadership"
+      ],
+      "start_date": "2022-04-01",
+      "end_date": "2025-06-01",
+      "location": "Boulder, Colorado, United States, North America",
+      "is_current": false,
+      "founded_year": 1989,
+      "job_order": 15
+    },
+    {
+      "company_name": "Marvelous - Deeptech Fund and Catalyst for Climate Solutions",
+      "company_id": "67b834a36f6af073c3155d79",
+      "domain": "marvelous-deeptech.com",
+      "linkedin_url": "linkedin.com/company/marvelousdeeptech",
+      "description": "Our belief is that the next wave of innovation will be propelled by science-driven startups, especially those birthed from breakthroughs at universities and semi-public R&D centers.",
+      "company_size": "11-50",
+      "industries": [
+        "Lending and Investments"
+      ],
+      "industry": [
+        "Financial Services",
+        "Capital Markets",
+        "Venture Capital and Private Equity Principals"
+      ],
+      "tech_verticals": [],
+      "title": "Co-Founder & Venture Partner",
+      "departments": [
+        "Senior Leadership"
+      ],
+      "start_date": "2024-10-01",
+      "end_date": "2024-11-01",
+      "location": "Berlin, Berlin, Germany, Europe",
+      "is_current": false,
+      "founded_year": 2023,
+      "job_order": 14
+    },
+    {
+      "company_name": "Marvelous - the science catalyst firm",
+      "company_id": "67b834a36f6af073c3155d79",
+      "domain": "marvelous-deeptech.com",
+      "linkedin_url": "linkedin.com/company/marvelousdeeptech",
+      "description": "Marvelous is a European (pre-)seed investment firm that invests in and catalyses early-stage DeepTech startups that reduce at least 100 Megatons of CO2e emissions per year by 2040. The startups must take an integrated approach that addresses climate change and makes a positive contribution to at least one additional planetary boundary.",
+      "company_size": "11-50",
+      "industries": [
+        "Lending and Investments"
+      ],
+      "industry": [
+        "Financial Services",
+        "Capital Markets",
+        "Venture Capital and Private Equity Principals"
+      ],
+      "tech_verticals": [],
+      "title": "Co-Founder & Non Executive Partner",
+      "departments": [
+        "Senior Leadership"
+      ],
+      "start_date": "2023-06-01",
+      "end_date": "2024-11-01",
+      "location": "Berlin, Berlin, Germany, Europe",
+      "is_current": false,
+      "founded_year": 2023,
+      "job_order": 13
+    },
+    {
+      "company_name": "TDK Ventures",
+      "company_id": "5e3bc03200c8f4c966a40a9c",
+      "domain": "tdk-ventures.com",
+      "linkedin_url": "linkedin.com/company/tdk-ventures",
+      "description": "EdgeSensing is a new internal startup from TDK aiming to solve challenges related to applications of sensors in the mobility industry.",
+      "company_size": "51-200",
+      "industries": [
+        "Finance",
+        "Lending and Investments"
+      ],
+      "industry": [
+        "Financial Services",
+        "Capital Markets",
+        "Venture Capital and Private Equity Principals"
+      ],
+      "tech_verticals": [
+        [
+          "Semiconductors & Computing Hardware",
+          "Semiconductor Materials, Equipment and Metrology"
+        ],
+        [
+          "Quantum & Frontier Materials",
+          "Nanomaterials and Nanofabrication"
+        ]
+      ],
+      "title": "Board Member in Residence",
+      "departments": [
+        "Senior Leadership"
+      ],
+      "start_date": "2022-04-01",
+      "end_date": "2024-04-01",
+      "location": "San Jose, California, United States, North America",
+      "is_current": false,
+      "founded_year": 2019,
+      "job_order": 12
+    },
+    {
+      "company_name": "Reflex Aerospace",
+      "company_id": "62ab21e165e79291284014c3",
+      "domain": "reflexaerospace.com",
+      "linkedin_url": "linkedin.com/company/reflex-aerospace",
+      "description": "We deliver tailor made, high performance satellite platforms to our customers an order of magnitude faster than anyone else.\n\nReflex Aerospace disrupts satellite manufacturing, faster than anyone else.\n\nCore business is to build and sell satellite platforms to customers from different domains. Reflex differentiates from competition by offering much faster manufacturing, assembly and integration times at competitive prices. Reflex Aerospace is a \u201cblack label\u201d manufacturer. It produces highest quality \u201cMade in Germany\u201d.\nMultiple services are offered around the core product to reach more customers. These services include smart financing models, satellite subscriptions and reselling of used platforms in orbit. All services aim to increase the number of sold platforms.",
+      "company_size": "51-200",
+      "industries": [
+        "DeepTech",
+        "Hardware",
+        "Manufacturing",
+        "Transportation"
+      ],
+      "industry": [
+        "Manufacturing",
+        "Defense and Space Manufacturing"
+      ],
+      "tech_verticals": [
+        [
+          "Space & Frontier",
+          "Spacecraft Platforms and Constellations"
+        ],
+        [
+          "Defence & Security",
+          "Space and Aerospace Defence"
+        ],
+        [
+          "Defence & Security",
+          "Defence Manufacturing and Materials"
+        ]
+      ],
+      "title": "Co-Founder",
+      "departments": [
+        "Senior Leadership"
+      ],
+      "start_date": "2022-04-01",
+      "end_date": "2023-03-01",
+      "location": "Berlin, Berlin, Germany, Europe",
+      "is_current": false,
+      "founded_year": 2021,
+      "job_order": 11
+    },
+    {
+      "company_name": "UNIO Enterprise GmbH",
+      "company_id": "64809b3e12bb1be136ab791c",
+      "domain": "unio.global",
+      "linkedin_url": "linkedin.com/company/un-io",
+      "description": "Satellite broadband will represent 50% of the projected growth of the global space economy by 2040 \u2014 and as much as 70% in the most bullish scenario. \nLaunching satellites that offer broadband internet service will help to drive down the cost of data, just as demand for that data explodes. \nIt is time for UN:IO, Europe\u2019s hypersecure and non-dependent broadband satellite megaconstellation*.",
+      "company_size": "1-10",
+      "industries": [
+        "Hardware",
+        "Internet Services",
+        "Telecommunication"
+      ],
+      "industry": [
+        "Media and Telecommunications",
+        "Telecommunications",
+        "Satellite Telecommunications"
+      ],
+      "tech_verticals": [
+        [
+          "Space & Frontier",
+          "Communications, Navigation and Timing"
+        ],
+        [
+          "Space & Frontier",
+          "Ground Stations and Space Connectivity"
+        ],
+        [
+          "Cloud & Infrastructure",
+          "Networking and Connectivity"
+        ],
+        [
+          "Defence & Security",
+          "C4 and Secure Communications"
+        ]
+      ],
+      "title": "Chief Executive Officer",
+      "departments": [
+        "Senior Leadership"
+      ],
+      "start_date": "2022-03-01",
+      "end_date": "2023-03-01",
+      "location": "Munich, Bavaria, Germany, Europe",
+      "is_current": false,
+      "founded_year": 2022,
+      "job_order": 10
+    },
+    {
+      "company_name": "Airbus",
+      "company_id": "5e3a8fc8040ca7b0c6f37193",
+      "domain": "airbus.com",
+      "linkedin_url": "linkedin.com/company/airbusgroup",
+      "description": "Airbus Scale fosters high-potential innovation within the company and through start-up engagement. By accelerating the commercialisation of high-value concepts, it actively contributes to company growth and our commitment to sustainable aerospace.",
+      "company_size": "10001+",
+      "industries": [
+        "Data and Analytics",
+        "DeepTech",
+        "Manufacturing",
+        "Transportation"
+      ],
+      "industry": [
+        "Manufacturing",
+        "Transportation Equipment Manufacturing",
+        "Aviation and Aerospace Component Manufacturing"
+      ],
+      "tech_verticals": [
+        [
+          "Defence & Security",
+          "Space and Aerospace Defence"
+        ],
+        [
+          "Space & Frontier",
+          "Spacecraft Platforms and Constellations"
+        ],
+        [
+          "ClimateTech",
+          "Food, Agriculture and Land Use"
+        ],
+        [
+          "Defence & Security",
+          "Autonomous and Uncrewed Systems"
+        ],
+        [
+          "Space & Frontier",
+          "Launch, Reentry and Propulsion Systems"
+        ]
+      ],
+      "title": "Founder of Airbus Scale - The Company Builder",
+      "departments": [
+        "Senior Leadership"
+      ],
+      "start_date": "2021-10-01",
+      "end_date": "2022-03-01",
+      "location": "Leiden, South Holland, The Netherlands, Europe",
+      "is_current": false,
+      "founded_year": 1970,
+      "job_order": 9
+    },
+    {
+      "company_name": "Airbus",
+      "company_id": "5e3a8fc8040ca7b0c6f37193",
+      "domain": "airbus.com",
+      "linkedin_url": "linkedin.com/company/airbusgroup",
+      "description": "At Innovation[X] we focus on three main activities:\n- Corporate Innovation inside-in\n- Venture Clienting with top startups\n- Build new businesses and new companies\n",
+      "company_size": "10001+",
+      "industries": [
+        "Data and Analytics",
+        "DeepTech",
+        "Manufacturing",
+        "Transportation"
+      ],
+      "industry": [
+        "Manufacturing",
+        "Transportation Equipment Manufacturing",
+        "Aviation and Aerospace Component Manufacturing"
+      ],
+      "tech_verticals": [
+        [
+          "Defence & Security",
+          "Space and Aerospace Defence"
+        ],
+        [
+          "Space & Frontier",
+          "Spacecraft Platforms and Constellations"
+        ],
+        [
+          "ClimateTech",
+          "Food, Agriculture and Land Use"
+        ],
+        [
+          "Defence & Security",
+          "Autonomous and Uncrewed Systems"
+        ],
+        [
+          "Space & Frontier",
+          "Launch, Reentry and Propulsion Systems"
+        ]
+      ],
+      "title": "EVP Innovation & Company Building",
+      "departments": [
+        "Strategy & Corporate Development"
+      ],
+      "start_date": "2020-03-01",
+      "end_date": "2022-03-01",
+      "location": "Leiden, South Holland, The Netherlands, Europe",
+      "is_current": false,
+      "founded_year": 1970,
+      "job_order": 8
+    },
+    {
+      "company_name": "Airbus",
+      "company_id": "5e3a8fc8040ca7b0c6f37193",
+      "domain": "airbus.com",
+      "linkedin_url": "linkedin.com/company/airbusgroup",
+      "description": null,
+      "company_size": "10001+",
+      "industries": [
+        "Data and Analytics",
+        "DeepTech",
+        "Manufacturing",
+        "Transportation"
+      ],
+      "industry": [
+        "Manufacturing",
+        "Transportation Equipment Manufacturing",
+        "Aviation and Aerospace Component Manufacturing"
+      ],
+      "tech_verticals": [
+        [
+          "Defence & Security",
+          "Space and Aerospace Defence"
+        ],
+        [
+          "Space & Frontier",
+          "Spacecraft Platforms and Constellations"
+        ],
+        [
+          "ClimateTech",
+          "Food, Agriculture and Land Use"
+        ],
+        [
+          "Defence & Security",
+          "Autonomous and Uncrewed Systems"
+        ],
+        [
+          "Space & Frontier",
+          "Launch, Reentry and Propulsion Systems"
+        ]
+      ],
+      "title": "Global Head of BizLab - The Airbus Incubators & Accelerators",
+      "departments": [
+        "Senior Leadership"
+      ],
+      "start_date": "2019-11-01",
+      "end_date": "2021-07-01",
+      "location": "Leiden, South Holland, The Netherlands, Europe",
+      "is_current": false,
+      "founded_year": 1970,
+      "job_order": 7
+    },
+    {
+      "company_name": "D3 Technologies AG",
+      "company_id": "61e01c8ef95b24d9c3f634f4",
+      "domain": "skyroads.com",
+      "linkedin_url": "linkedin.com/company/skyroads",
+      "description": null,
+      "company_size": "1-10",
+      "industries": [
+        "Consumer Products",
+        "DeepTech",
+        "Transportation"
+      ],
+      "industry": [
+        "Transportation, Logistics, Supply Chain and Storage",
+        "Airlines and Aviation"
+      ],
+      "tech_verticals": [
+        [
+          "Robotics & Industrial Tech",
+          "Aerial Robotics and Autonomous Drones"
+        ],
+        [
+          "Mobility, Transport & Logistics",
+          "Last Mile Delivery and Drones"
+        ],
+        [
+          "AI & Machine Learning",
+          "Multimodal Perception and Sensor Fusion"
+        ],
+        [
+          "Robotics & Industrial Tech",
+          "Computer Vision and Quality Inspection"
+        ],
+        [
+          "Robotics & Industrial Tech",
+          "Edge Computing and AI for Robotics"
+        ]
+      ],
+      "title": "Co-Founder",
+      "departments": [
+        "Senior Leadership"
+      ],
+      "start_date": "2019-03-01",
+      "end_date": "2022-01-01",
+      "location": "Munich, Bavaria, Germany, Europe",
+      "is_current": false,
+      "founded_year": 2019,
+      "job_order": 6
+    },
+    {
+      "company_name": "e-bot7 GmbH",
+      "company_id": "5e3a8f1b040ca7b0c6f05e2d",
+      "domain": "e-bot7.com",
+      "linkedin_url": "linkedin.com/company/e-bot7",
+      "description": null,
+      "company_size": "11-50",
+      "industries": [
+        "Information Technology",
+        "Software"
+      ],
+      "industry": [
+        "Professional Services",
+        "IT Services and IT Consulting"
+      ],
+      "tech_verticals": [
+        [
+          "Enterprise Automation",
+          "AI Agents and Process Copilots"
+        ],
+        [
+          "SalesTech",
+          "Customer Support & Experience"
+        ],
+        [
+          "AI & Machine Learning",
+          "Agentic Frameworks and Orchestration"
+        ],
+        [
+          "Enterprise Automation",
+          "RPA and Task Automation"
+        ],
+        [
+          "SalesTech",
+          "AI Sales Copilots, Conversation Intelligence, and Assistants"
+        ]
+      ],
+      "title": "Board Member",
+      "departments": [
+        "Senior Leadership"
+      ],
+      "start_date": "2018-10-01",
+      "end_date": "2022-01-01",
+      "location": "Munich, Bavaria, Germany, Europe",
+      "is_current": false,
+      "founded_year": 2016,
+      "job_order": 5
+    },
+    {
+      "company_name": "Wayra Germany",
+      "company_id": "5ebcdafe332603f591e07f8e",
+      "domain": "wayra.de",
+      "linkedin_url": "linkedin.com/company/wayra-deutschland",
+      "description": null,
+      "company_size": "11-50",
+      "industries": [
+        "Community and Lifestyle",
+        "Information Technology",
+        "Lending and Investments"
+      ],
+      "industry": [
+        "Professional Services",
+        "IT Services and IT Consulting"
+      ],
+      "tech_verticals": [
+        [
+          "Cloud & Infrastructure",
+          "Networking and Connectivity"
+        ]
+      ],
+      "title": "Chief Executive Officer",
+      "departments": [
+        "Senior Leadership"
+      ],
+      "start_date": "2017-02-01",
+      "end_date": "2019-10-01",
+      "location": "Munich, Bavaria, Germany, Europe",
+      "is_current": false,
+      "founded_year": 2012,
+      "job_order": 4
+    },
+    {
+      "company_name": "TechFounders",
+      "company_id": "5e3bc02d00c8f4c966a3daa3",
+      "domain": "techfounders.com",
+      "linkedin_url": "linkedin.com/company/techfounders",
+      "description": null,
+      "company_size": "11-50",
+      "industries": [
+        "Consumer Products",
+        "Lending and Investments",
+        "Professional Services",
+        "Transportation"
+      ],
+      "industry": [
+        "Professional Services",
+        "Business Consulting and Services"
+      ],
+      "tech_verticals": [],
+      "title": "Chief Operating Officer",
+      "departments": [
+        "Senior Leadership",
+        "Operations"
+      ],
+      "start_date": "2014-11-01",
+      "end_date": "2017-02-01",
+      "location": "Munich, Bavaria, Germany, Europe",
+      "is_current": false,
+      "founded_year": 2014,
+      "job_order": 3
+    },
+    {
+      "company_name": "BearingPoint",
+      "company_id": "5e3b9217137e998b5ae9b90d",
+      "domain": "bearingpoint.com",
+      "linkedin_url": "linkedin.com/company/bearingpoint",
+      "description": null,
+      "company_size": "10001+",
+      "industries": [
+        "Media",
+        "Professional Services"
+      ],
+      "industry": [
+        "Professional Services",
+        "Business Consulting and Services"
+      ],
+      "tech_verticals": [
+        [
+          "Data & Analytics",
+          "Business Intelligence and Decision Intelligence"
+        ]
+      ],
+      "title": "TechConsultant",
+      "departments": [
+        "Engineering"
+      ],
+      "start_date": "2010-07-01",
+      "end_date": "2015-07-01",
+      "location": "Amsterdam, North Holland, The Netherlands, Europe",
+      "is_current": false,
+      "founded_year": 2002,
+      "job_order": 2
+    },
+    {
+      "company_name": "OSRAM Lighting SA",
+      "company_id": "",
+      "domain": "osram.com/am/index.jsp",
+      "linkedin_url": "linkedin.com/company/osram-lighting-sa",
+      "description": null,
+      "company_size": null,
+      "industries": null,
+      "industry": [],
+      "tech_verticals": [],
+      "title": "Market Intelligence",
+      "departments": [
+        "Strategy & Corporate Development"
+      ],
+      "start_date": "2004-01-01",
+      "end_date": "2004-07-01",
+      "location": null,
+      "is_current": false,
+      "founded_year": null,
+      "job_order": 1
+    }
+  ],
+  "past_position_title": null,
+  "past_position_company_name": null,
+  "past_position_company_website": null,
+  "current_tenure": 0,
+  "average_tenure": 25,
+  "education": [
+    {
+      "name": "INSEAD",
+      "linkedin_url": "https://www.linkedin.com/school/insead",
+      "field_of_study": "Corporate Venturing",
+      "degree_title": "Associate of Arts - AA",
+      "description": "From finding, evaluating and nurturing new ideas to building the right processes, structures and innovation ecosystems to establish relationships with the wider start-up and investment community. You emerge from the programme with a comprehensive understanding of what\u2019s at stake, and a customised action plan to build new businesses.",
+      "start_date": "2021-01-01",
+      "end_date": "2021-04-01",
+      "location": ""
+    },
+    {
+      "name": "Universit\u00e4t Innsbruck",
+      "linkedin_url": "https://www.linkedin.com/school/uniinnsbruck",
+      "field_of_study": "International Business Administration and Economics",
+      "degree_title": "Master of Arts (M.A.)",
+      "description": null,
+      "start_date": "2006-01-01",
+      "end_date": "2012-01-01",
+      "location": "Innsbruck, Tyrol, Austria, Europe"
+    },
+    {
+      "name": "University of New Orleans",
+      "linkedin_url": "https://www.linkedin.com/school/university-of-new-orleans",
+      "field_of_study": "International Business",
+      "degree_title": "ASP",
+      "description": null,
+      "start_date": "2011-01-01",
+      "end_date": "2011-01-01",
+      "location": "New Orleans, Louisiana, United States, North America"
+    },
+    {
+      "name": "Universitat de Barcelona",
+      "linkedin_url": "https://www.linkedin.com/school/university-of-barcelona",
+      "field_of_study": "Internationale Gesch\u00e4fte/internationaler Handel",
+      "degree_title": "Licentiate degree",
+      "description": null,
+      "start_date": "2009-01-01",
+      "end_date": "2010-01-01",
+      "location": "Barcelona, Catalonia, Spain, Europe"
+    },
+    {
+      "name": "Gymnasium Neubiberg",
+      "linkedin_url": "",
+      "field_of_study": null,
+      "degree_title": "Abitur",
+      "description": null,
+      "start_date": "1995-01-01",
+      "end_date": "2003-01-01",
+      "location": null
+    },
+    {
+      "name": "Colegio aleman Alexander von Humboldt - Mexico City ",
+      "linkedin_url": "",
+      "field_of_study": null,
+      "degree_title": null,
+      "description": "Mexico City",
+      "start_date": "1986-01-01",
+      "end_date": "1995-01-01",
+      "location": null
+    }
+  ],
+  "languages": [
+    {
+      "name": "Spanish",
+      "proficiency_level": "Native Or Bilingual Proficiency"
+    },
+    {
+      "name": "German",
+      "proficiency_level": "Native Or Bilingual Proficiency"
+    },
+    {
+      "name": "English",
+      "proficiency_level": "Full Professional Proficiency"
+    },
+    {
+      "name": "Portuguese",
+      "proficiency_level": "Professional Working Proficiency"
+    }
+  ],
+  "skills": [
+    "Business Analysis",
+    "Business Development",
+    "Business Strategy",
+    "Business Travel",
+    "Change Management",
+    "Collateral Management",
+    "Consulting",
+    "DeepTech",
+    "Entrepreneurship Development",
+    "Entwicklung neuer Gesch\u00e4ftsfelder (New Venture)",
+    "Gr\u00fcnder",
+    "IT-Strategie",
+    "Innovation Management",
+    "Intercultural Communication",
+    "Interkulturelle Kompetenzen",
+    "Interkulturelles Management",
+    "Internationale Wirtschaft",
+    "Joint Ventures",
+    "Languages",
+    "Leadership Development",
+    "Management Consulting",
+    "Marketing",
+    "Mathematische Modelle",
+    "Neu gegr\u00fcndete Startups",
+    "Operational Excellence",
+    "Organizational Development",
+    "Process Improvement",
+    "Project Coordination",
+    "Project Management",
+    "Project Planning",
+    "Projektmanagement",
+    "Projektplanung",
+    "Research and Development (R&D)",
+    "Risikokapital",
+    "Social Entrepreneurship",
+    "Start-ups",
+    "Startup-Entwicklung",
+    "Strategic Communications",
+    "Strategic Financial Planning",
+    "Strategic Planning",
+    "Strategische Planung",
+    "Strategisches Management",
+    "Strategy",
+    "Unternehmensanalyse",
+    "Unternehmensberatung",
+    "Unternehmensplanung",
+    "Unternehmensstrategie",
+    "Ver\u00e4nderungsmanagement",
+    "Wirtschaftswissenschaften",
+    "venture building"
+  ],
+  "linkedin_followers": 21045,
+  "linkedin_connections": 18682,
+  "talent_signal_id": "633b150a-bcae-461a-b6bc-6038e233ec9c",
+  "signal_date": "2026-04-24",
+  "signal_score": 10,
+  "signal_summary": "Christian leads Deep Tech venture building and investment at Creative Dock Group. He is a serial entrepreneur, notably in aerospace and VR. Christian brings extensive deep tech innovation and VC experience.",
+  "signal_type": "New Role",
+  "signal_status": "Live",
+  "out_of_stealth_advantage": null,
+  "announcement_delay_months": 0,
+  "talent_last_signal": true,
+  "new_position_title": "Managing Director Deep Tech",
+  "new_position_company_id": "5e3b950a137e998b5aeb8c63",
+  "new_position_company_name": "Creative Dock Group",
+  "new_position_company_website": "creativedock.com",
+  "new_position_company_tagline": "Creative Dock builds and operates ventures to transform corporate assets into scalable businesses.",
+  "new_position_industry": [
+    "Technology, Information and Internet",
+    "Software Development"
+  ],
+  "new_position_tech_verticals": null,
+  "is_new_position_industry_estimated": false,
+  "past_position_company_id": null,
+  "tags": null
+}

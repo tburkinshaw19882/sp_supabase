@@ -1,0 +1,348 @@
+{
+  "id": "68f868be0edf127082624593",
+  "organization_name": "SHINEPHI",
+  "organization_rank": 44667,
+  "organization_name_aliases": [],
+  "primary_role": "company",
+  "roles": [
+    "company"
+  ],
+  "description": "SHINEPHI provides non-destructive, real-time inspection with sub-nanometer vertical sensitivity to support zero-defect semiconductor and photonics manufacturing. It delivers this via a patented add-on module that transforms existing imaging systems into high-precision measurement tools. The solution integrates with current inspection equipment to provide stable, in-line nano-characterization and feedback for nano-fabrication. SHINEPHI operates as a B2B hardware provider serving semiconductor and photonics manufacturers seeking improved yield and faster production cycles.",
+  "tagline": "SHINEPHI provides a patented add-on that gives imaging systems sub-nm, non-destructive inspection.",
+  "customer_focus": "b2b",
+  "certifications": [],
+  "customer_profile": "",
+  "traction_highlights": "",
+  "reported_clients": [],
+  "last_updated": "2026-03-31",
+  "tags": [],
+  "industries": [
+    "Biotechnology",
+    "DeepTech"
+  ],
+  "industry": [
+    "Professional Services",
+    "Research Services",
+    "Nanotechnology Research"
+  ],
+  "tech_verticals": [
+    [
+      "Supply Chain & ManufacturingTech",
+      "Quality, Inspection and Compliance"
+    ],
+    [
+      "BioTech",
+      "Lab Automation, Instruments and Reagents"
+    ],
+    [
+      "Semiconductors & Computing Hardware",
+      "Semiconductor Materials, Equipment and Metrology"
+    ],
+    [
+      "BioTech",
+      "Diagnostics and Biomarker Platforms"
+    ],
+    [
+      "Robotics & Industrial Tech",
+      "Computer Vision and Quality Inspection"
+    ]
+  ],
+  "sub_industries": [
+    "Image Recognition",
+    "Industrial",
+    "Nanotechnology",
+    "Semiconductor"
+  ],
+  "operating_status": "active",
+  "highlights": [
+    "headcount_3mo_surge",
+    "recent_funding"
+  ],
+  "new_highlights": [],
+  "regions": [
+    "Europe"
+  ],
+  "founded_year": 2025,
+  "founders": [
+    "Iris Cusini",
+    "Valerio Pruneri"
+  ],
+  "founder_info": [
+    {
+      "specter_person_id": "per_ab1d216a4f1ce2be940a6ecd",
+      "full_name": "Valerio Pruneri",
+      "departments": [
+        "Senior Leadership",
+        "Engineering"
+      ],
+      "title": "Co-Founder and Technology Advisor",
+      "seniority": "Executive Level"
+    },
+    {
+      "specter_person_id": "per_f4fc6ce3a3bc0fb08d8d5f03",
+      "full_name": "Iris Cusini",
+      "departments": [
+        "Senior Leadership",
+        "Engineering"
+      ],
+      "title": "CTO",
+      "seniority": "Executive Level"
+    }
+  ],
+  "founder_count": 2,
+  "employee_count": 5,
+  "employee_count_range": "1-10",
+  "revenue_estimate_usd": 0,
+  "investors": [
+    "Demian Martinez",
+    "European Investment Fund",
+    "Grow Venture Partners",
+    "JL Ferrer",
+    "Norbert Mart\u00ednez"
+  ],
+  "investor_count": 5,
+  "patent_count": null,
+  "trademark_count": null,
+  "website": {
+    "domain": "shinephi.tech",
+    "url": "https://shinephi.tech",
+    "domain_aliases": null
+  },
+  "hq": {
+    "city": "Castelldefels",
+    "state": "Catalonia",
+    "country": "Spain",
+    "region": "Europe",
+    "continent": "Europe",
+    "regions": [
+      "Barcelona Metropolitan Area",
+      "EMEA",
+      "European Union",
+      "Southern Europe"
+    ]
+  },
+  "contact": {
+    "phone_number": null,
+    "email": "roland@shinephi.tech"
+  },
+  "ipo": [],
+  "growth_stage": "seed_stage",
+  "funding": {
+    "total_funding_usd": 1161998,
+    "last_funding_usd": 1161998,
+    "last_funding_date": "2025-10-10",
+    "last_funding_type": "Seed",
+    "round_details": [],
+    "round_count": 1,
+    "post_money_valuation_usd": null
+  },
+  "web": {
+    "visits": 65,
+    "popularity_rank": null,
+    "top_country": "Hungary",
+    "bounce_rate": 47.81,
+    "bounce_rate_3mo_change": 0,
+    "pages_per_visit": 1.008906364440918,
+    "pages_per_visit_3mo_change": 0,
+    "session_duration": 0,
+    "session_duration_3mo_change": 0,
+    "traffic_source": "Mail: 0.0%; Direct: 32.0%; Search: 43.0%; Social: 7.0%; Referrals: 13.0%; Paid Referrals: 2.0%",
+    "country_breakdown": "Hungary 100.0%"
+  },
+  "technologies": [
+    "Apple Mobile Web Clips Icon",
+    "DMARC",
+    "Google Font API",
+    "IPhone / Mobile Compatible",
+    "LetsEncrypt",
+    "SPF",
+    "SSL by Default",
+    "Viewport Meta",
+    "WordPress",
+    "Wordpress Plugins"
+  ],
+  "it_spend": 165088,
+  "awards": [],
+  "award_count": null,
+  "news": [],
+  "reviews": {
+    "g2": {
+      "products": [],
+      "rating_avg": 0,
+      "review_count": null
+    },
+    "chrome_extensions": {
+      "extensions": [],
+      "rating_avg": 0,
+      "review_count": 0,
+      "user_count": 0
+    }
+  },
+  "socials": {
+    "twitter": {
+      "url": null,
+      "follower_count": null
+    },
+    "facebook": {
+      "url": null
+    },
+    "linkedin": {
+      "url": "linkedin.com/company/shinephi",
+      "follower_count": 735
+    },
+    "itunes": {
+      "urls": null,
+      "rating": null,
+      "review_count": null
+    },
+    "googleplay": {
+      "urls": null,
+      "rating": null,
+      "review_count": null
+    },
+    "instagram": {
+      "url": null,
+      "follower_count": null,
+      "following_count": null
+    },
+    "crunchbase": {
+      "url": "crunchbase.com/organization/shinephi"
+    },
+    "pitchbook": {
+      "url": "pitchbook.com/profiles/company/599816-80"
+    }
+  },
+  "traction_metrics": {
+    "popularity_rank": {},
+    "web_visits": {
+      "latest": 65,
+      "1mo": {
+        "value": 59,
+        "change": 6,
+        "percentage": 10.17
+      },
+      "2mo": {
+        "value": 60,
+        "change": 5,
+        "percentage": 8.33
+      },
+      "3mo": {
+        "value": 59,
+        "change": 6,
+        "percentage": 10.17
+      },
+      "4mo": {
+        "value": 62,
+        "change": 3,
+        "percentage": 4.84
+      },
+      "5mo": {
+        "value": 62,
+        "change": 3,
+        "percentage": 4.84
+      },
+      "6mo": {
+        "value": 0,
+        "change": 65
+      },
+      "12mo": {
+        "value": 0,
+        "change": 65
+      },
+      "24mo": {
+        "value": 0,
+        "change": 65
+      }
+    },
+    "employee_count": {
+      "latest": 5,
+      "1mo": {
+        "value": 3,
+        "change": 2,
+        "percentage": 66.67
+      },
+      "2mo": {
+        "value": 3,
+        "change": 2,
+        "percentage": 66.67
+      },
+      "3mo": {
+        "value": 3,
+        "change": 2,
+        "percentage": 66.67
+      },
+      "4mo": {
+        "value": 1,
+        "change": 4,
+        "percentage": 400
+      },
+      "5mo": {
+        "value": 0,
+        "change": 5
+      },
+      "6mo": {
+        "value": 0,
+        "change": 5
+      },
+      "12mo": {
+        "value": 0,
+        "change": 5
+      },
+      "24mo": {
+        "value": 0,
+        "change": 5
+      }
+    },
+    "linkedin_followers": {
+      "latest": 735,
+      "1mo": {
+        "value": 705,
+        "change": 30,
+        "percentage": 4.26
+      },
+      "2mo": {
+        "value": 671,
+        "change": 64,
+        "percentage": 9.54
+      },
+      "3mo": {
+        "value": 542,
+        "change": 193,
+        "percentage": 35.61
+      },
+      "4mo": {
+        "value": 494,
+        "change": 241,
+        "percentage": 48.79
+      },
+      "5mo": {
+        "value": 0,
+        "change": 735
+      },
+      "6mo": {
+        "value": 0,
+        "change": 735
+      },
+      "12mo": {
+        "value": 0,
+        "change": 735
+      },
+      "24mo": {
+        "value": 0,
+        "change": 735
+      }
+    },
+    "twitter_followers": {},
+    "instagram_followers": {},
+    "itunes_reviews": {},
+    "googleplay_reviews": {},
+    "app_downloads": {},
+    "g2_reviews": {},
+    "trustpilot_reviews": {},
+    "chrome_extensions_reviews": {},
+    "chrome_extensions_users": {},
+    "glassdoor_rating": {},
+    "glassdoor_reviews": {}
+  },
+  "specter_strategic_signal_ids": null
+}

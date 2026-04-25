@@ -1,0 +1,332 @@
+{
+  "person_id": "per_d9bb627a8ddfe7b4fe69415f",
+  "talent_signal_ids": null,
+  "investor_signal_ids": null,
+  "profile_picture_url": null,
+  "first_name": "Andrey",
+  "last_name": "Simeonov",
+  "full_name": "Andrey Simeonov",
+  "linkedin_url": "https://www.linkedin.com/in/andreysimeonov",
+  "linkedin_num_id": 369913983,
+  "linkedin_urn": "ACoAABYMcH8B20KwMT2bC3qDXbwiDq7Ks1NPmzM",
+  "twitter_url": null,
+  "github_url": null,
+  "about": null,
+  "tagline": "Venture & Growth Investor at Kinnevik | ex-Blackstone | Yale MBA",
+  "location": "London, England, United Kingdom, Europe",
+  "region": "Europe",
+  "highlights": [
+    "fortune_500_experience",
+    "prior_exit",
+    "prior_vc_backed_experience",
+    "vc_backed_founder"
+  ],
+  "level_of_seniority": "Mid Level",
+  "years_of_experience": 8,
+  "education_level": "Bachelor's Degree",
+  "experience": [
+    {
+      "company_name": "Kinnevik",
+      "company_id": "5e3bbd9500c8f4c9669cb04d",
+      "domain": "kinnevik.com",
+      "linkedin_url": "linkedin.com/company/kinnevik",
+      "description": null,
+      "company_size": "51-200",
+      "industries": [
+        "Finance",
+        "Lending and Investments"
+      ],
+      "industry": [
+        "Financial Services",
+        "Capital Markets",
+        "Venture Capital and Private Equity Principals"
+      ],
+      "tech_verticals": [],
+      "title": "Venture and Growth Investor",
+      "departments": [
+        "Strategy & Corporate Development"
+      ],
+      "start_date": "2024-11-01",
+      "end_date": null,
+      "location": "Stockholm, Stockholm, Sweden, Europe",
+      "is_current": true,
+      "founded_year": 1936,
+      "job_order": 6
+    },
+    {
+      "company_name": "Nothing",
+      "company_id": "60418c894ddab8d8bfe9c6a8",
+      "domain": "nothing.tech",
+      "linkedin_url": "linkedin.com/company/nothingtech",
+      "description": null,
+      "company_size": "10001+",
+      "industries": [
+        "Consumer Products"
+      ],
+      "industry": [
+        "Technology, Information and Internet",
+        "Software Development"
+      ],
+      "tech_verticals": [
+        [
+          "Semiconductors & Computing Hardware",
+          "Analog, Mixed-Signal and RF Devices"
+        ],
+        [
+          "Semiconductors & Computing Hardware",
+          "Edge, Embedded and Automotive Computing"
+        ],
+        [
+          "Consumer Brands, Fashion & Retail",
+          "Home, Wellness & Lifestyle Brands"
+        ],
+        [
+          "Consumer Apps",
+          "Productivity and Utilities"
+        ],
+        [
+          "Semiconductors & Computing Hardware",
+          "Design, IP and EDA"
+        ]
+      ],
+      "title": "Investor",
+      "departments": [
+        "Senior Leadership"
+      ],
+      "start_date": "2022-04-01",
+      "end_date": null,
+      "location": "London, England, United Kingdom, Europe",
+      "is_current": true,
+      "founded_year": 2020,
+      "job_order": 5
+    },
+    {
+      "company_name": "Moneybox",
+      "company_id": "5e3a7f150aa7a3270a54c901",
+      "domain": "moneyboxapp.com",
+      "linkedin_url": "linkedin.com/company/digital-moneybox",
+      "description": null,
+      "company_size": "201-500",
+      "industries": [
+        "Finance",
+        "Lending and Investments"
+      ],
+      "industry": [
+        "Financial Services",
+        "Insurance"
+      ],
+      "tech_verticals": [
+        [
+          "FinTech",
+          "Banking and Core Platforms"
+        ],
+        [
+          "FinTech",
+          "Financial and Wealth Asset Management"
+        ]
+      ],
+      "title": "Investor",
+      "departments": [
+        "Senior Leadership"
+      ],
+      "start_date": "2022-05-01",
+      "end_date": null,
+      "location": "London, England, United Kingdom, Europe",
+      "is_current": true,
+      "founded_year": 2015,
+      "job_order": 4
+    },
+    {
+      "company_name": "Freetrade",
+      "company_id": "5e3a7f150aa7a3270a54c2cd",
+      "domain": "freetrade.io",
+      "linkedin_url": "linkedin.com/company/freetrade",
+      "description": null,
+      "company_size": "201-500",
+      "industries": [
+        "Finance",
+        "Information Technology",
+        "Lending and Investments",
+        "Software"
+      ],
+      "industry": [
+        "Technology, Information and Internet",
+        "Software Development"
+      ],
+      "tech_verticals": [
+        [
+          "FinTech",
+          "Investing and Capital Markets Tech"
+        ],
+        [
+          "FinTech",
+          "Financial and Wealth Asset Management"
+        ],
+        [
+          "Commerce & Marketplaces",
+          "Consumer Marketplaces & Service Aggregators"
+        ]
+      ],
+      "title": "Investor",
+      "departments": [
+        "Senior Leadership"
+      ],
+      "start_date": "2021-11-01",
+      "end_date": null,
+      "location": "London, England, United Kingdom, Europe",
+      "is_current": true,
+      "founded_year": 2017,
+      "job_order": 3
+    },
+    {
+      "company_name": "The Blackstone Group",
+      "company_id": "5e3b9759137e998b5aec2c13",
+      "domain": "blackstone.com",
+      "linkedin_url": "linkedin.com/company/blackstoneinc",
+      "description": null,
+      "company_size": "5001-10000",
+      "industries": [
+        "Finance",
+        "Lending and Investments",
+        "Media"
+      ],
+      "industry": [
+        "Financial Services",
+        "Capital Markets"
+      ],
+      "tech_verticals": [
+        [
+          "FinTech",
+          "Financial and Wealth Asset Management"
+        ]
+      ],
+      "title": "Associate",
+      "departments": [
+        "Other"
+      ],
+      "start_date": "2019-06-01",
+      "end_date": "2023-06-01",
+      "location": "New York City, New York, United States, North America",
+      "is_current": false,
+      "founded_year": 1985,
+      "job_order": 2
+    },
+    {
+      "company_name": "Brock Capital Group",
+      "company_id": "5e3b92ac137e998b5aeaa9bb",
+      "domain": "brockcapital.com",
+      "linkedin_url": "linkedin.com/company/brock-capital",
+      "description": null,
+      "company_size": "11-50",
+      "industries": [
+        "Finance",
+        "Lending and Investments",
+        "Media"
+      ],
+      "industry": [
+        "Financial Services",
+        "Capital Markets",
+        "Investment Banking"
+      ],
+      "tech_verticals": [],
+      "title": "Investment Banking Summer Analyst",
+      "departments": [
+        "Finance"
+      ],
+      "start_date": "2017-06-01",
+      "end_date": "2017-08-01",
+      "location": "New York City, New York, United States, North America",
+      "is_current": false,
+      "founded_year": 2002,
+      "job_order": 1
+    }
+  ],
+  "current_position_title": "Venture and Growth Investor",
+  "current_position_company_name": "Kinnevik",
+  "current_position_company_website": "kinnevik.com",
+  "past_position_title": "Associate",
+  "past_position_company_name": "The Blackstone Group",
+  "past_position_company_website": "blackstone.com",
+  "current_tenure": 53,
+  "average_tenure": 25,
+  "education": [
+    {
+      "name": "Yale School of Management",
+      "linkedin_url": "https://www.linkedin.com/school/yale-school-of-management",
+      "field_of_study": null,
+      "degree_title": "Master of Business Administration - MBA",
+      "description": null,
+      "start_date": null,
+      "end_date": null,
+      "location": "New Haven, Connecticut, United States, North America"
+    },
+    {
+      "name": "NYU Stern School of Business",
+      "linkedin_url": "https://www.linkedin.com/school/nyu-stern-school-of-business",
+      "field_of_study": "Finance, General",
+      "degree_title": "Specialization in Finance",
+      "description": "Relevant courses: Equity Valuation, Alternative Investments, Debt Instruments and Markets, Principles of Securities Trading, Hedge Fund Strategies, Risk Management in Financial Institutions,  The Financial Service Industry, Financial Statement Analysis",
+      "start_date": null,
+      "end_date": null,
+      "location": "New York City, New York, United States, North America"
+    },
+    {
+      "name": "New York University Abu Dhabi",
+      "linkedin_url": "https://www.linkedin.com/school/new-york-university-abu-dhabi",
+      "field_of_study": "Economics with specialization in Finance",
+      "degree_title": "Bachelor's Degree",
+      "description": "\ufffcHonors: Full Scholarship, Founders Day Award\n",
+      "start_date": null,
+      "end_date": null,
+      "location": "Abu Dhabi, Abu Dhabi, United Arab Emirates, Asia"
+    },
+    {
+      "name": "Universit\u00e0 Bocconi",
+      "linkedin_url": "https://www.linkedin.com/school/universita-bocconi",
+      "field_of_study": "Business/Managerial Economics",
+      "degree_title": "Summer Program",
+      "description": "- Explored the subject areas part of Economics, Management or Finance undergraduate degree programs\n- Education through simulations, case analyses, discussions and creative activities",
+      "start_date": null,
+      "end_date": null,
+      "location": "Milan, Lombardy, Italy, Europe"
+    },
+    {
+      "name": "American College of Sofia, Bulgaria",
+      "linkedin_url": "",
+      "field_of_study": null,
+      "degree_title": "American High-school Diploma; Bulgarian High-school Diploma",
+      "description": null,
+      "start_date": null,
+      "end_date": null,
+      "location": null
+    },
+    {
+      "name": "Central Military Music Academy",
+      "linkedin_url": "",
+      "field_of_study": "Classical Piano",
+      "degree_title": null,
+      "description": null,
+      "start_date": null,
+      "end_date": null,
+      "location": null
+    }
+  ],
+  "languages": [
+    {
+      "name": "English",
+      "proficiency_level": "Native Or Bilingual Proficiency"
+    },
+    {
+      "name": "Bulgarian",
+      "proficiency_level": "Native Or Bilingual Proficiency"
+    },
+    {
+      "name": "Arabic",
+      "proficiency_level": "Elementary Proficiency"
+    }
+  ],
+  "skills": null,
+  "linkedin_followers": 2880,
+  "linkedin_connections": 2745,
+  "last_updated": "2026-03-23 21:29:01"
+}

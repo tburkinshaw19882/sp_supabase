@@ -18,7 +18,7 @@ Specter saved-search → Supabase SMOKE TEST.
 Run once to:
 1. Pull 5 records per type from 4 saved searches (~20 credits total).
 2. Upsert into sp_searches, sp_companies, sp_stratintel,
-   sp_people_search_hits, sp_talent_signals (and specter_people).
+   sp_people_search_hits, sp_talent_signals (and sp_people_linkedin).
 3. Print a summary of what landed.
 
 Throwaway test rows. Tom will delete via:
@@ -174,7 +174,7 @@ def map_stratintel(search_id, rec):
     }
 
 def map_specter_person(rec):
-    """Map a people/talent record into the existing specter_people row shape."""
+    """Map a people/talent record into the sp_people_linkedin row shape."""
     return {
         "person_id":                       rec.get("person_id"),
         "talent_signal_ids":               rec.get("talent_signal_ids"),
@@ -312,13 +312,13 @@ def main():
 
         elif ptype == "people":
             people_rows = [map_specter_person(r) for r in records]
-            upsert("specter_people", people_rows, on_conflict="person_id")
+            upsert("sp_people_linkedin", people_rows, on_conflict="person_id")
             hit_rows = [map_people_hit(sid, r) for r in records]
             upsert("sp_people_search_hits", hit_rows, on_conflict="search_id,person_id")
 
         elif ptype == "talent":
             people_rows = [map_specter_person(r) for r in records]
-            upsert("specter_people", people_rows, on_conflict="person_id")
+            upsert("sp_people_linkedin", people_rows, on_conflict="person_id")
             signal_rows = [map_talent_signal(sid, r) for r in records]
             upsert("sp_talent_signals", signal_rows, on_conflict="search_id,talent_signal_id")
 

@@ -1,7 +1,64 @@
 -- ============================================================
 -- Specter saved-search → Supabase sync — schema
--- Apply once before first cron run.
+-- Apply once via the Supabase SQL editor (service-role).
+-- The MCP server runs read-only / non-owner, so it cannot apply
+-- this; the SQL editor uses the postgres superuser and can.
 -- ============================================================
+
+-- ------------------------------------------------------------
+-- Step 0 — rename the existing specter_* tables to the new
+-- sp_* convention. Idempotent: skipped if already renamed.
+-- ------------------------------------------------------------
+DO $$
+BEGIN
+  IF EXISTS (SELECT 1 FROM information_schema.tables
+             WHERE table_schema='public' AND table_name='specter_coinvestors') THEN
+    EXECUTE 'ALTER TABLE public.specter_coinvestors RENAME TO sp_lists_coinvestors';
+  END IF;
+  IF EXISTS (SELECT 1 FROM information_schema.tables
+             WHERE table_schema='public' AND table_name='specter_past_climate_companies') THEN
+    EXECUTE 'ALTER TABLE public.specter_past_climate_companies RENAME TO sp_lists_past_climate_cos';
+  END IF;
+  IF EXISTS (SELECT 1 FROM information_schema.tables
+             WHERE table_schema='public' AND table_name='specter_people') THEN
+    EXECUTE 'ALTER TABLE public.specter_people RENAME TO sp_people_linkedin';
+  END IF;
+  IF EXISTS (SELECT 1 FROM information_schema.tables
+             WHERE table_schema='public' AND table_name='specter_people_staging') THEN
+    EXECUTE 'ALTER TABLE public.specter_people_staging RENAME TO sp_people_linkedin_staging';
+  END IF;
+  IF EXISTS (SELECT 1 FROM information_schema.tables
+             WHERE table_schema='public' AND table_name='specter_people_stars') THEN
+    EXECUTE 'ALTER TABLE public.specter_people_stars RENAME TO sp_people_linkedin_stars';
+  END IF;
+  IF EXISTS (SELECT 1 FROM information_schema.tables
+             WHERE table_schema='public' AND table_name='specter_people_notes') THEN
+    EXECUTE 'ALTER TABLE public.specter_people_notes RENAME TO sp_people_linkedin_notes';
+  END IF;
+  IF EXISTS (SELECT 1 FROM information_schema.tables
+             WHERE table_schema='public' AND table_name='specter_people_tags') THEN
+    EXECUTE 'ALTER TABLE public.specter_people_tags RENAME TO sp_people_linkedin_tags';
+  END IF;
+END $$;
+
+-- ------------------------------------------------------------
+-- Step 0b — add a PRIMARY KEY on sp_people_linkedin(person_id).
+-- Required so the FKs from sp_talent_signals and
+-- sp_people_search_hits can reference it, and so the upsert
+-- in smoke_test.py (on_conflict=person_id) works.
+-- Verified pre-migration: 2,532 rows, 0 NULLs, 0 duplicates.
+-- ------------------------------------------------------------
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_constraint
+    WHERE conrelid = 'public.sp_people_linkedin'::regclass
+      AND contype = 'p'
+  ) THEN
+    ALTER TABLE public.sp_people_linkedin
+      ADD CONSTRAINT sp_people_linkedin_pkey PRIMARY KEY (person_id);
+  END IF;
+END $$;
 
 -- ------------------------------------------------------------
 -- sp_searches  — registry of all Specter saved searches
@@ -53,7 +110,6 @@ CREATE TABLE IF NOT EXISTS public.sp_companies (
   specter_id           TEXT    NOT NULL,
   first_seen_at        TIMESTAMPTZ NOT NULL DEFAULT now(),
   last_synced_at       TIMESTAMPTZ NOT NULL DEFAULT now(),
-  -- promoted scalars
   organization_name    TEXT,
   domain               TEXT,
   hq_country           TEXT,
@@ -66,43 +122,40 @@ CREATE TABLE IF NOT EXISTS public.sp_companies (
   last_funding_date    DATE,
   last_funding_type    TEXT,
   last_updated_specter DATE,
-  -- full payload
   raw                  JSONB NOT NULL,
   PRIMARY KEY (search_id, specter_id)
 );
 
-CREATE INDEX IF NOT EXISTS sp_companies_specter_id_idx   ON public.sp_companies (specter_id);
-CREATE INDEX IF NOT EXISTS sp_companies_domain_idx       ON public.sp_companies (domain);
-CREATE INDEX IF NOT EXISTS sp_companies_first_seen_idx   ON public.sp_companies (first_seen_at DESC);
-CREATE INDEX IF NOT EXISTS sp_companies_raw_gin          ON public.sp_companies USING GIN (raw);
+CREATE INDEX IF NOT EXISTS sp_companies_specter_id_idx ON public.sp_companies (specter_id);
+CREATE INDEX IF NOT EXISTS sp_companies_domain_idx     ON public.sp_companies (domain);
+CREATE INDEX IF NOT EXISTS sp_companies_first_seen_idx ON public.sp_companies (first_seen_at DESC);
+CREATE INDEX IF NOT EXISTS sp_companies_raw_gin        ON public.sp_companies USING GIN (raw);
 
 -- ------------------------------------------------------------
--- sp_stratintel  — investor-interest (a.k.a. stratintel) signals
+-- sp_stratintel  — investor-interest (stratintel) signals
 -- Path: /searches/investor-interest/{search_id}/results
 -- One row per (search_id, signal_id).
 -- ------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS public.sp_stratintel (
-  search_id            INTEGER NOT NULL REFERENCES public.sp_searches(search_id) ON DELETE CASCADE,
-  signal_id            TEXT    NOT NULL,
-  first_seen_at        TIMESTAMPTZ NOT NULL DEFAULT now(),
-  last_synced_at       TIMESTAMPTZ NOT NULL DEFAULT now(),
-  -- promoted scalars
-  signal_date          TIMESTAMPTZ,
-  signal_score         INTEGER,
-  signal_type          TEXT,
-  signal_summary       TEXT,
-  source_types         TEXT[],
-  signal_source        TEXT[],
-  entity_id            TEXT,
-  entity_kind          TEXT CHECK (entity_kind IN ('company','person')),
-  company_name         TEXT,
-  company_domain       TEXT,
+  search_id                 INTEGER NOT NULL REFERENCES public.sp_searches(search_id) ON DELETE CASCADE,
+  signal_id                 TEXT    NOT NULL,
+  first_seen_at             TIMESTAMPTZ NOT NULL DEFAULT now(),
+  last_synced_at            TIMESTAMPTZ NOT NULL DEFAULT now(),
+  signal_date               TIMESTAMPTZ,
+  signal_score              INTEGER,
+  signal_type               TEXT,
+  signal_summary            TEXT,
+  source_types              TEXT[],
+  signal_source             TEXT[],
+  entity_id                 TEXT,
+  entity_kind               TEXT CHECK (entity_kind IN ('company','person')),
+  company_name              TEXT,
+  company_domain            TEXT,
   signal_total_funding_usd  BIGINT,
   signal_last_funding_usd   BIGINT,
   signal_last_funding_date  DATE,
-  signal_investors     TEXT[],
-  -- full payload
-  raw                  JSONB NOT NULL,
+  signal_investors          TEXT[],
+  raw                       JSONB NOT NULL,
   PRIMARY KEY (search_id, signal_id)
 );
 
@@ -114,63 +167,51 @@ CREATE INDEX IF NOT EXISTS sp_stratintel_raw_gin         ON public.sp_stratintel
 -- ------------------------------------------------------------
 -- sp_talent_signals  — talent saved-search results, signal-grain.
 -- Path: /searches/talent/{search_id}/results
--- Person profile is stored separately in the existing
--- public.specter_people table; this table holds only the
--- signal-specific fields, with FK to specter_people.
+-- Person profile lives in sp_people_linkedin (renamed from
+-- specter_people); this table holds only signal-specific fields.
 -- ------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS public.sp_talent_signals (
-  search_id            INTEGER NOT NULL REFERENCES public.sp_searches(search_id) ON DELETE CASCADE,
-  talent_signal_id     TEXT    NOT NULL,
-  person_id            TEXT    NOT NULL REFERENCES public.specter_people(person_id) ON DELETE CASCADE,
-  first_seen_at        TIMESTAMPTZ NOT NULL DEFAULT now(),
-  last_synced_at       TIMESTAMPTZ NOT NULL DEFAULT now(),
-  -- signal scalars
-  signal_date                  DATE,
-  signal_score                 INTEGER,
-  signal_type                  TEXT,
-  signal_status                TEXT,
-  signal_summary               TEXT,
-  -- new position
-  new_position_title           TEXT,
-  new_position_company_id      TEXT,
-  new_position_company_name    TEXT,
-  new_position_company_website TEXT,
-  -- past position
-  past_position_title          TEXT,
-  past_position_company_id     TEXT,
-  past_position_company_name   TEXT,
+  search_id                     INTEGER NOT NULL REFERENCES public.sp_searches(search_id) ON DELETE CASCADE,
+  talent_signal_id              TEXT    NOT NULL,
+  person_id                     TEXT    NOT NULL REFERENCES public.sp_people_linkedin(person_id) ON DELETE CASCADE,
+  first_seen_at                 TIMESTAMPTZ NOT NULL DEFAULT now(),
+  last_synced_at                TIMESTAMPTZ NOT NULL DEFAULT now(),
+  signal_date                   DATE,
+  signal_score                  INTEGER,
+  signal_type                   TEXT,
+  signal_status                 TEXT,
+  signal_summary                TEXT,
+  new_position_title            TEXT,
+  new_position_company_id       TEXT,
+  new_position_company_name     TEXT,
+  new_position_company_website  TEXT,
+  past_position_title           TEXT,
+  past_position_company_id      TEXT,
+  past_position_company_name    TEXT,
   past_position_company_website TEXT,
-  -- stealth-related
-  out_of_stealth_advantage     TEXT,
-  announcement_delay_months    INTEGER,
-  -- full payload
-  raw                          JSONB NOT NULL,
+  out_of_stealth_advantage      TEXT,
+  announcement_delay_months     INTEGER,
+  raw                           JSONB NOT NULL,
   PRIMARY KEY (search_id, talent_signal_id)
 );
 
-CREATE INDEX IF NOT EXISTS sp_talent_signals_person_id_idx
-  ON public.sp_talent_signals (person_id);
-CREATE INDEX IF NOT EXISTS sp_talent_signals_signal_date_idx
-  ON public.sp_talent_signals (signal_date DESC);
-CREATE INDEX IF NOT EXISTS sp_talent_signals_new_company_idx
-  ON public.sp_talent_signals (new_position_company_website);
-CREATE INDEX IF NOT EXISTS sp_talent_signals_first_seen_idx
-  ON public.sp_talent_signals (first_seen_at DESC);
-CREATE INDEX IF NOT EXISTS sp_talent_signals_raw_gin
-  ON public.sp_talent_signals USING GIN (raw);
+CREATE INDEX IF NOT EXISTS sp_talent_signals_person_id_idx   ON public.sp_talent_signals (person_id);
+CREATE INDEX IF NOT EXISTS sp_talent_signals_signal_date_idx ON public.sp_talent_signals (signal_date DESC);
+CREATE INDEX IF NOT EXISTS sp_talent_signals_new_company_idx ON public.sp_talent_signals (new_position_company_website);
+CREATE INDEX IF NOT EXISTS sp_talent_signals_first_seen_idx  ON public.sp_talent_signals (first_seen_at DESC);
+CREATE INDEX IF NOT EXISTS sp_talent_signals_raw_gin         ON public.sp_talent_signals USING GIN (raw);
 
 -- ------------------------------------------------------------
 -- sp_people_search_hits  — people saved-search appearances.
 -- Path: /searches/people/{search_id}/results
--- Person profile lives in specter_people. This table records
--- which saved searches a person matches and when.
+-- Person profile lives in sp_people_linkedin.
 -- ------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS public.sp_people_search_hits (
-  search_id            INTEGER NOT NULL REFERENCES public.sp_searches(search_id) ON DELETE CASCADE,
-  person_id            TEXT    NOT NULL REFERENCES public.specter_people(person_id) ON DELETE CASCADE,
-  first_seen_at        TIMESTAMPTZ NOT NULL DEFAULT now(),
-  last_synced_at       TIMESTAMPTZ NOT NULL DEFAULT now(),
-  raw                  JSONB NOT NULL,
+  search_id      INTEGER NOT NULL REFERENCES public.sp_searches(search_id) ON DELETE CASCADE,
+  person_id      TEXT    NOT NULL REFERENCES public.sp_people_linkedin(person_id) ON DELETE CASCADE,
+  first_seen_at  TIMESTAMPTZ NOT NULL DEFAULT now(),
+  last_synced_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  raw            JSONB NOT NULL,
   PRIMARY KEY (search_id, person_id)
 );
 

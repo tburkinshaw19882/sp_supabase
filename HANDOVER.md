@@ -21,7 +21,7 @@ A one-off smoke test that:
 
 1. Applies the `sp_*` schema (5 tables) via `migrations.sql`.
 2. Calls the Specter API for **5 records each** from 4 saved searches (one per syncable product type).
-3. Upserts those 20 records into the new tables, and the underlying person profiles into the existing `specter_people` table.
+3. Upserts those 20 records into the new tables, and the underlying person profiles into the existing `sp_people_linkedin` table (renamed from `specter_people`).
 4. Prints row counts as proof the data landed.
 
 That's it. There is no cron, no weekly run, no backfill. Future sync work will be specified separately.
@@ -89,7 +89,7 @@ Specter occasionally returns 502 / 503 / 504. Retry up to 3 times with exponenti
    - For each of the 4 test searches:
      - GET /searches/{path}/{search_id}/results?new=true&limit=5
      - Upsert 5 records into the appropriate sp_* table
-     - For people / talent: also upsert 5 person profiles into specter_people
+     - For people / talent: also upsert 5 person profiles into sp_people_linkedin
    - Print row counts per table
 4. Stop. Do not run again. Do not loop.
 ```
@@ -112,10 +112,10 @@ Run the SQL in `migrations.sql` (separate file) once before first cron run. It c
 - `sp_searches` — registry, one row per Specter saved search
 - `sp_companies` — company-search results, signal-grain by `(search_id, specter_id)`
 - `sp_stratintel` — investor-interest signals, by `(search_id, signal_id)`
-- `sp_talent_signals` — talent signals, by `(search_id, talent_signal_id)`, with FK to `specter_people.person_id`
-- `sp_people_search_hits` — people-search appearances, by `(search_id, person_id)`, with FK to `specter_people.person_id`
+- `sp_talent_signals` — talent signals, by `(search_id, talent_signal_id)`, with FK to `sp_people_linkedin.person_id`
+- `sp_people_search_hits` — people-search appearances, by `(search_id, person_id)`, with FK to `sp_people_linkedin.person_id`
 
-People-type and talent-type results both write the underlying person profile to the existing `specter_people` table (one row per person, dedup across searches), and only the search-specific fields go into `sp_people_search_hits` / `sp_talent_signals`. This matches the existing Supabase pattern where `specter_people` is the canonical person store.
+People-type and talent-type results both write the underlying person profile to the `sp_people_linkedin` table (renamed from `specter_people` — one row per person, dedup across searches), and only the search-specific fields go into `sp_people_search_hits` / `sp_talent_signals`. `sp_people_linkedin` is the canonical person store.
 
 ## Mapping records → rows
 
@@ -127,11 +127,11 @@ Top-level scalars to promote: `id` → `specter_id`, `organization_name`, `web.d
 
 ### People
 
-Person profile → upsert into `specter_people` (use existing column list, populate from the API record's matching fields). Then upsert into `sp_people_search_hits` with `(search_id, person_id, first_seen_at, last_synced_at, raw)`.
+Person profile → upsert into `sp_people_linkedin` (use existing column list, populate from the API record's matching fields). Then upsert into `sp_people_search_hits` with `(search_id, person_id, first_seen_at, last_synced_at, raw)`.
 
 ### Talent
 
-Person profile → upsert into `specter_people`. Then upsert into `sp_talent_signals` with the signal-specific fields: `talent_signal_id`, `person_id`, `signal_date`, `signal_score`, `signal_type`, `signal_status`, `signal_summary`, `new_position_*`, `past_position_*`, `out_of_stealth_advantage`, `announcement_delay_months`, `raw`.
+Person profile → upsert into `sp_people_linkedin`. Then upsert into `sp_talent_signals` with the signal-specific fields: `talent_signal_id`, `person_id`, `signal_date`, `signal_score`, `signal_type`, `signal_status`, `signal_summary`, `new_position_*`, `past_position_*`, `out_of_stealth_advantage`, `announcement_delay_months`, `raw`.
 
 Important: per `lib-specter`, `signal_score` is unreliable. Store it for completeness but never use it for ranking.
 

@@ -39,6 +39,13 @@ BEGIN
              WHERE table_schema='public' AND table_name='specter_people_tags') THEN
     EXECUTE 'ALTER TABLE public.specter_people_tags RENAME TO sp_people_linkedin_tags';
   END IF;
+  -- View that joins sp_people_linkedin with stars/notes/tags. PG auto-
+  -- rewrites the view body on the table renames above; we just rename
+  -- the view itself so the naming convention stays consistent.
+  IF EXISTS (SELECT 1 FROM information_schema.views
+             WHERE table_schema='public' AND table_name='specter_people_with_actions') THEN
+    EXECUTE 'ALTER VIEW public.specter_people_with_actions RENAME TO sp_people_linkedin_with_actions';
+  END IF;
 END $$;
 
 -- ------------------------------------------------------------

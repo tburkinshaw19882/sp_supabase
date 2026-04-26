@@ -242,6 +242,59 @@ CREATE INDEX IF NOT EXISTS sp_talent_signals_first_seen_idx  ON public.sp_talent
 CREATE INDEX IF NOT EXISTS sp_talent_signals_raw_gin         ON public.sp_talent_signals USING GIN (raw);
 
 -- ------------------------------------------------------------
+-- sp_talent_linkedin  — LinkedIn-style general news alerts on people.
+-- Path: /searches/talent/{search_id}/results (same endpoint as
+-- sp_talent_signals — the API shape is identical).
+--
+-- Held in a separate table from sp_talent_signals because the review
+-- function differs: this feed is general LinkedIn news/alerts on
+-- people we want to track, whereas sp_talent_signals is structured
+-- talent-move signals (new role, new company, etc.). Different review
+-- rubrics, different downstream filter routines.
+-- ------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS public.sp_talent_linkedin (
+  search_id                     INTEGER NOT NULL REFERENCES public.sp_searches(search_id) ON DELETE CASCADE,
+  talent_signal_id              TEXT    NOT NULL,
+  person_id                     TEXT    NOT NULL REFERENCES public.sp_people_linkedin(person_id) ON DELETE CASCADE,
+  first_seen_at                 TIMESTAMPTZ NOT NULL DEFAULT now(),
+  last_synced_at                TIMESTAMPTZ NOT NULL DEFAULT now(),
+  signal_date                   DATE,
+  signal_score                  INTEGER,
+  signal_type                   TEXT,
+  signal_status                 TEXT,
+  signal_summary                TEXT,
+  new_position_title            TEXT,
+  new_position_company_id       TEXT,
+  new_position_company_name     TEXT,
+  new_position_company_website  TEXT,
+  past_position_title           TEXT,
+  past_position_company_id      TEXT,
+  past_position_company_name    TEXT,
+  past_position_company_website TEXT,
+  out_of_stealth_advantage      TEXT,
+  announcement_delay_months     INTEGER,
+  raw                           JSONB NOT NULL,
+  af_dealflow                   BOOLEAN,
+  pass_actual_startup           BOOLEAN,
+  pass_thesis                   BOOLEAN,
+  pass_quality                  BOOLEAN,
+  approved                      BOOLEAN GENERATED ALWAYS AS (
+    af_dealflow = false
+    AND pass_actual_startup = true
+    AND pass_thesis = true
+    AND pass_quality = true
+  ) STORED,
+  PRIMARY KEY (search_id, talent_signal_id)
+);
+
+CREATE INDEX IF NOT EXISTS sp_talent_linkedin_person_id_idx   ON public.sp_talent_linkedin (person_id);
+CREATE INDEX IF NOT EXISTS sp_talent_linkedin_signal_date_idx ON public.sp_talent_linkedin (signal_date DESC);
+CREATE INDEX IF NOT EXISTS sp_talent_linkedin_new_company_idx ON public.sp_talent_linkedin (new_position_company_website);
+CREATE INDEX IF NOT EXISTS sp_talent_linkedin_first_seen_idx  ON public.sp_talent_linkedin (first_seen_at DESC);
+CREATE INDEX IF NOT EXISTS sp_talent_linkedin_raw_gin         ON public.sp_talent_linkedin USING GIN (raw);
+CREATE INDEX IF NOT EXISTS sp_talent_linkedin_approved_idx    ON public.sp_talent_linkedin (approved) WHERE approved = true;
+
+-- ------------------------------------------------------------
 -- sp_people_search_hits  — people saved-search appearances.
 -- Path: /searches/people/{search_id}/results
 -- Person profile lives in sp_people_linkedin.

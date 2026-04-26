@@ -130,6 +130,17 @@ CREATE TABLE IF NOT EXISTS public.sp_companies (
   last_funding_type    TEXT,
   last_updated_specter DATE,
   raw                  JSONB NOT NULL,
+  -- review/triage columns; routine writes the first 4, approved is derived
+  af_dealflow          BOOLEAN,
+  pass_actual_startup  BOOLEAN,
+  pass_thesis          BOOLEAN,
+  pass_quality         BOOLEAN,
+  approved             BOOLEAN GENERATED ALWAYS AS (
+    af_dealflow = false
+    AND pass_actual_startup = true
+    AND pass_thesis = true
+    AND pass_quality = true
+  ) STORED,
   PRIMARY KEY (search_id, specter_id)
 );
 
@@ -163,6 +174,17 @@ CREATE TABLE IF NOT EXISTS public.sp_stratintel (
   signal_last_funding_date  DATE,
   signal_investors          TEXT[],
   raw                       JSONB NOT NULL,
+  -- review/triage columns; routine writes the first 4, approved is derived
+  af_dealflow               BOOLEAN,
+  pass_actual_startup       BOOLEAN,
+  pass_thesis               BOOLEAN,
+  pass_quality              BOOLEAN,
+  approved                  BOOLEAN GENERATED ALWAYS AS (
+    af_dealflow = false
+    AND pass_actual_startup = true
+    AND pass_thesis = true
+    AND pass_quality = true
+  ) STORED,
   PRIMARY KEY (search_id, signal_id)
 );
 
@@ -199,6 +221,17 @@ CREATE TABLE IF NOT EXISTS public.sp_talent_signals (
   out_of_stealth_advantage      TEXT,
   announcement_delay_months     INTEGER,
   raw                           JSONB NOT NULL,
+  -- review/triage columns; routine writes the first 4, approved is derived
+  af_dealflow                   BOOLEAN,
+  pass_actual_startup           BOOLEAN,
+  pass_thesis                   BOOLEAN,
+  pass_quality                  BOOLEAN,
+  approved                      BOOLEAN GENERATED ALWAYS AS (
+    af_dealflow = false
+    AND pass_actual_startup = true
+    AND pass_thesis = true
+    AND pass_quality = true
+  ) STORED,
   PRIMARY KEY (search_id, talent_signal_id)
 );
 
@@ -242,3 +275,73 @@ DROP TRIGGER IF EXISTS sp_searches_updated_at ON public.sp_searches;
 CREATE TRIGGER sp_searches_updated_at
   BEFORE UPDATE ON public.sp_searches
   FOR EACH ROW EXECUTE FUNCTION public.sp_searches_set_updated_at();
+
+-- ------------------------------------------------------------
+-- Review/triage columns + approved generated column.
+-- Idempotent — applies cleanly to existing tables that pre-date
+-- the inline definitions in the CREATE TABLE blocks above.
+--
+-- Column meanings:
+--   af_dealflow          — TRUE if the company's domain matches a
+--                          row in public.af_dealflow (i.e. already
+--                          in our pipeline → out of scope).
+--                          Routine sets this. NULL = not yet checked.
+--   pass_actual_startup  — TRUE = is genuinely a startup
+--   pass_thesis          — TRUE = fits Transition's thesis
+--   pass_quality         — TRUE = meets quality bar
+--   approved             — STORED GENERATED:
+--                            (af_dealflow = false)
+--                            AND pass_actual_startup
+--                            AND pass_thesis
+--                            AND pass_quality.
+--                          NULL until all four are set, then TRUE/FALSE.
+--
+-- Domain matched per table for the af_dealflow check:
+--   sp_companies      → domain
+--   sp_stratintel     → company_domain
+--   sp_talent_signals → new_position_company_website
+-- ------------------------------------------------------------
+ALTER TABLE public.sp_companies
+  ADD COLUMN IF NOT EXISTS af_dealflow         BOOLEAN,
+  ADD COLUMN IF NOT EXISTS pass_actual_startup BOOLEAN,
+  ADD COLUMN IF NOT EXISTS pass_thesis         BOOLEAN,
+  ADD COLUMN IF NOT EXISTS pass_quality        BOOLEAN,
+  ADD COLUMN IF NOT EXISTS approved            BOOLEAN GENERATED ALWAYS AS (
+    af_dealflow = false
+    AND pass_actual_startup = true
+    AND pass_thesis = true
+    AND pass_quality = true
+  ) STORED;
+
+ALTER TABLE public.sp_stratintel
+  ADD COLUMN IF NOT EXISTS af_dealflow         BOOLEAN,
+  ADD COLUMN IF NOT EXISTS pass_actual_startup BOOLEAN,
+  ADD COLUMN IF NOT EXISTS pass_thesis         BOOLEAN,
+  ADD COLUMN IF NOT EXISTS pass_quality        BOOLEAN,
+  ADD COLUMN IF NOT EXISTS approved            BOOLEAN GENERATED ALWAYS AS (
+    af_dealflow = false
+    AND pass_actual_startup = true
+    AND pass_thesis = true
+    AND pass_quality = true
+  ) STORED;
+
+ALTER TABLE public.sp_talent_signals
+  ADD COLUMN IF NOT EXISTS af_dealflow         BOOLEAN,
+  ADD COLUMN IF NOT EXISTS pass_actual_startup BOOLEAN,
+  ADD COLUMN IF NOT EXISTS pass_thesis         BOOLEAN,
+  ADD COLUMN IF NOT EXISTS pass_quality        BOOLEAN,
+  ADD COLUMN IF NOT EXISTS approved            BOOLEAN GENERATED ALWAYS AS (
+    af_dealflow = false
+    AND pass_actual_startup = true
+    AND pass_thesis = true
+    AND pass_quality = true
+  ) STORED;
+
+-- Partial indexes for the review queue: only index approved=true rows,
+-- which is the small set the surfacing routine actually queries.
+CREATE INDEX IF NOT EXISTS sp_companies_approved_idx
+  ON public.sp_companies (approved) WHERE approved = true;
+CREATE INDEX IF NOT EXISTS sp_stratintel_approved_idx
+  ON public.sp_stratintel (approved) WHERE approved = true;
+CREATE INDEX IF NOT EXISTS sp_talent_signals_approved_idx
+  ON public.sp_talent_signals (approved) WHERE approved = true;

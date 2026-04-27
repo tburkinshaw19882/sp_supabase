@@ -198,6 +198,12 @@ CREATE INDEX IF NOT EXISTS sp_stratintel_raw_gin         ON public.sp_stratintel
 -- Path: /searches/talent/{search_id}/results
 -- Person profile lives in sp_people_linkedin (renamed from
 -- specter_people); this table holds only signal-specific fields.
+--
+-- LIFECYCLE: sourcing fire-and-forget. Rows here are signals that
+-- a person joined / founded a company we may want to source. Once
+-- the COMPANY is actioned (added to dealflow or passed), the row
+-- is done. These rows DO NOT trigger sp_people_linkedin maintenance.
+-- See sp_talent_linkedin for the people-maintenance feed.
 -- ------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS public.sp_talent_signals (
   search_id                     INTEGER NOT NULL REFERENCES public.sp_searches(search_id) ON DELETE CASCADE,
@@ -246,11 +252,24 @@ CREATE INDEX IF NOT EXISTS sp_talent_signals_raw_gin         ON public.sp_talent
 -- Path: /searches/talent/{search_id}/results (same endpoint as
 -- sp_talent_signals — the API shape is identical).
 --
--- Held in a separate table from sp_talent_signals because the review
--- function differs: this feed is general LinkedIn news/alerts on
--- people we want to track, whereas sp_talent_signals is structured
--- talent-move signals (new role, new company, etc.). Different review
--- rubrics, different downstream filter routines.
+-- Held in a separate table from sp_talent_signals because the
+-- LIFECYCLE is fundamentally different:
+--
+-- sp_talent_signals  -> sourcing, fire-and-forget once actioned.
+--                       Person is just the vehicle to find a company.
+--                       NEVER triggers sp_people_linkedin updates.
+--
+-- sp_talent_linkedin -> news on people Clara already cares about.
+--                       Person IS the target. Drives the
+--                       /people/{person_id} loopback that keeps
+--                       sp_people_linkedin live as a relational DB.
+--                       For every NEW person_id written to this
+--                       table by the weekly cron, fetch the full
+--                       profile from /people/{id} and upsert into
+--                       sp_people_linkedin (the search payload alone
+--                       leaves current_position_* NULL — only the
+--                       /people/{id} endpoint returns the canonical
+--                       profile).
 -- ------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS public.sp_talent_linkedin (
   search_id                     INTEGER NOT NULL REFERENCES public.sp_searches(search_id) ON DELETE CASCADE,

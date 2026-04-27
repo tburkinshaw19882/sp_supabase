@@ -205,10 +205,16 @@ CREATE INDEX IF NOT EXISTS sp_stratintel_raw_gin         ON public.sp_stratintel
 -- is done. These rows DO NOT trigger sp_people_linkedin maintenance.
 -- See sp_talent_linkedin for the people-maintenance feed.
 -- ------------------------------------------------------------
+-- Note: person_id is a plain TEXT identifier here, NOT a FK. The
+-- original schema had FK -> sp_people_linkedin ON DELETE CASCADE,
+-- but that wrongly coupled sourcing-feed signals to the LinkedIn
+-- network store and caused real cleanup pain (deleting an off-network
+-- person from sp_people_linkedin would silently nuke their sourcing
+-- signals). Decoupled at the FK drop migration below.
 CREATE TABLE IF NOT EXISTS public.sp_talent_signals (
   search_id                     INTEGER NOT NULL REFERENCES public.sp_searches(search_id) ON DELETE CASCADE,
   talent_signal_id              TEXT    NOT NULL,
-  person_id                     TEXT    NOT NULL REFERENCES public.sp_people_linkedin(person_id) ON DELETE CASCADE,
+  person_id                     TEXT    NOT NULL,
   first_seen_at                 TIMESTAMPTZ NOT NULL DEFAULT now(),
   last_synced_at                TIMESTAMPTZ NOT NULL DEFAULT now(),
   signal_date                   DATE,
@@ -417,3 +423,13 @@ CREATE INDEX IF NOT EXISTS sp_stratintel_approved_idx
   ON public.sp_stratintel (approved) WHERE approved = true;
 CREATE INDEX IF NOT EXISTS sp_talent_signals_approved_idx
   ON public.sp_talent_signals (approved) WHERE approved = true;
+
+-- ------------------------------------------------------------
+-- Drop the FK sp_talent_signals.person_id -> sp_people_linkedin.
+-- Architectural decoupling: sp_talent_signals is sourcing
+-- fire-and-forget per the lifecycle in memory; it must not
+-- cascade-delete with the LinkedIn network store. Idempotent —
+-- safe to re-run on installs that already dropped the FK.
+-- ------------------------------------------------------------
+ALTER TABLE public.sp_talent_signals
+  DROP CONSTRAINT IF EXISTS sp_talent_signals_person_id_fkey;
